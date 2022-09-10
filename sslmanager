@@ -1,0 +1,20 @@
+server {
+        listen 443;
+        listen [::]:443;
+
+        root /var/www/html;
+        index index.html report.html index.htm index.nginx-debian.html;
+    ssl_certificate     /xxxx_edu_in.crt;
+    ssl_certificate_key /xxx.txt;
+    ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
+        server_name xxxx.reva.edu.in www.xxxx.reva.edu.in;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+
+
+    access_log /var/log/nginx/xxx.access.log;
+    error_log /var/log/nginx/xxx.error.log;
+
+}
